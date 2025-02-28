@@ -1,11 +1,14 @@
-import type { Metadata } from "next";
-import "./globals.css";
-import "@mantine/core/styles.css";
 import {
   ColorSchemeScript,
   MantineProvider,
   mantineHtmlProps,
 } from "@mantine/core";
+import { Notifications } from "@mantine/notifications";
+import type { Metadata } from "next";
+import "./globals.css";
+import "@mantine/core/styles.css";
+import "@mantine/notifications/styles.css";
+import { theme } from "@/app/theme";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -23,7 +26,10 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body>
-        <MantineProvider>{children}</MantineProvider>
+        <MantineProvider theme={theme}>
+          <Notifications autoClose={10 * 1000} />
+          {children}
+        </MantineProvider>
       </body>
     </html>
   );
