@@ -28,7 +28,7 @@ import { useState } from "react";
 import { z } from "zod";
 
 import { GoogleButton } from "@/app/components/GoogleButton";
-import { auth } from "@/firebase";
+import { auth } from "@/app/lib/firebase";
 
 const schema = z.object({
   email: z.string().email(),

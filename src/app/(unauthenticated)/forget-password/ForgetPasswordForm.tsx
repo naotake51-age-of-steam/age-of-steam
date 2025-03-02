@@ -21,7 +21,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { z } from "zod";
 
-import { auth } from "@/firebase";
+import { auth } from "@/app/lib/firebase";
 
 const schema = z.object({
   email: z.string().email(),
@@ -42,9 +42,7 @@ export function ForgetPasswordForm(props: PaperProps) {
     try {
       setIsLoading(true);
 
-      const response = await sendPasswordResetEmail(auth, values.email);
-
-      console.log(response);
+      await sendPasswordResetEmail(auth, values.email);
 
       setIsRegistered(true);
     } catch (e) {

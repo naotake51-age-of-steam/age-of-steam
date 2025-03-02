@@ -1,0 +1,68 @@
+"use client";
+
+import { Card, Image, Text, Badge, Button, Group, Grid } from "@mantine/core";
+import { collection, onSnapshot } from "firebase/firestore";
+import Link from "next/link";
+import { useEffect, useState } from "react";
+import { db } from "@/app/lib/firebase";
+import type { Room } from "@/app/type";
+
+export function RoomList() {
+  const [rooms, setRooms] = useState<Room[]>([]);
+
+  useEffect(() => {
+    const roomsRef = collection(db, "rooms");
+
+    return onSnapshot(roomsRef, (snapshot) => {
+      const rooms = snapshot.docs.map((doc) => {
+        return {
+          id: doc.id,
+          ...doc.data(),
+        } as Room;
+      });
+      setRooms(rooms);
+    });
+  }, []);
+
+  const sortedRooms = rooms.sort((a, b) => a.timestamp - b.timestamp);
+
+  return (
+    <Grid>
+      {sortedRooms.map((room) => (
+        <Grid.Col key={room.id} span={{ base: 6, md: 4, lg: 3, xl: 2 }}>
+          <Room room={room} />
+        </Grid.Col>
+      ))}
+    </Grid>
+  );
+}
+
+function Room({ room }: { room: Room }) {
+  return (
+    <Card shadow="sm" padding="lg" radius="md" withBorder>
+      <Card.Section>
+        <Image src={`${room.game.type}.jpg`} h={160} alt="boardgame" />
+      </Card.Section>
+
+      <Group justify="space-between" mt="md" mb="xs">
+        <Text fw={500}>{room.name}</Text>
+        <Badge color={room.users.length ? "pink" : "gray"}>
+          {room.users.length}人
+        </Badge>
+      </Group>
+
+      <Text size="sm" c="dimmed">
+        {room.game.name}
+      </Text>
+      <Text size="sm" c="dimmed">
+        {room.users.map((user) => user.name).join(", ")}
+      </Text>
+
+      <Link href={`/rooms/${room.id}`}>
+        <Button variant="outline" color="blue" fullWidth mt="md" radius="md">
+          入室
+        </Button>
+      </Link>
+    </Card>
+  );
+}

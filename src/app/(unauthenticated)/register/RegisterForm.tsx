@@ -29,7 +29,7 @@ import { match } from "ts-pattern";
 import { z } from "zod";
 
 import { Term } from "@/app/components/Term";
-import { auth } from "@/firebase";
+import { auth } from "@/app/lib/firebase";
 
 const schema = z.object({
   email: z.string().email(),
