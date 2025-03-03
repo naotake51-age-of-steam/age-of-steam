@@ -14,9 +14,7 @@ export default function UnauthenticatedLayout({
         </Group>
         <Divider />
       </header>
-      <main style={{ height: "calc(100vh - 60px)", padding: "32px" }}>
-        {children}
-      </main>
+      <main style={{ height: "calc(100vh - 60px)" }}>{children}</main>
     </>
   );
 }

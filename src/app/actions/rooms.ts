@@ -3,7 +3,6 @@
 import z from "zod";
 import { db } from "@/app/lib/firebase-admin";
 import { serverAction } from "@/app/lib/serverAction";
-import type { User } from "@/app/type";
 
 const MAX_ROOMS = 20;
 
@@ -49,40 +48,31 @@ export const createRoom = serverAction(
   }
 );
 
-export const enterRoom = serverAction(
+export const sendMessage = serverAction(
   z.object({
     roomId: z.string(),
+    text: z.string(),
   }),
   async function (authUser, input) {
-    const roomRef = db.collection("rooms").doc(input.roomId);
-    const userRef = db.collection("users").doc(authUser.uid);
-
-    const docRoomSnap = await roomRef.get();
-    const docUserSnap = await userRef.get();
-
-    const users: User[] = docRoomSnap.data()!.users;
-
-    const enterUser = {
-      id: docUserSnap.id,
-      ...docUserSnap.data(),
+    const newMessage = {
+      text: input.text,
+      sender: {
+        id: authUser.uid,
+        name: authUser.name,
+      },
+      timestamp: new Date().getTime(),
     };
 
-    const newRoomUsers = users.some((user) => user.id === authUser.uid)
-      ? users
-      : [...users, enterUser];
-
-    const newRoom = {
-      id: docRoomSnap.id,
-      users: newRoomUsers,
-      ...docRoomSnap.data(),
-    };
-
-    await roomRef.set(newRoom);
+    await db
+      .collection("rooms")
+      .doc(input.roomId)
+      .collection("messages")
+      .add(newMessage);
 
     return {
       status: "success",
-      title: "ルーム入室",
-      message: "ルームに入室しました。",
+      title: "メッセージ送信",
+      message: "メッセージを送信しました。",
     };
   }
 );

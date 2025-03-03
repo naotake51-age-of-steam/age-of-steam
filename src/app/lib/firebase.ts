@@ -2,6 +2,7 @@
 import { Analytics, getAnalytics } from "firebase/analytics";
 import { initializeApp } from "firebase/app";
 import { getAuth, connectAuthEmulator } from "firebase/auth";
+import { getDatabase, connectDatabaseEmulator } from "firebase/database";
 import { getFirestore, connectFirestoreEmulator } from "firebase/firestore";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -31,6 +32,8 @@ auth.languageCode = "ja";
 
 export const db = getFirestore(app);
 
+export const realtimeDb = getDatabase(app);
+
 if (process.env.NEXT_PUBLIC_FIREBASE_USE_EMULATOR === "true") {
   connectAuthEmulator(
     auth,
@@ -40,5 +43,10 @@ if (process.env.NEXT_PUBLIC_FIREBASE_USE_EMULATOR === "true") {
     db,
     process.env.NEXT_PUBLIC_FIREBASE_STORE_EMULATOR_HOST!,
     parseInt(process.env.NEXT_PUBLIC_FIREBASE_STORE_EMULATOR_PORT!)
+  );
+  connectDatabaseEmulator(
+    realtimeDb,
+    process.env.NEXT_PUBLIC_FIREBASE_REALTIME_EMULATOR_HOST!,
+    parseInt(process.env.NEXT_PUBLIC_FIREBASE_REALTIME_EMULATOR_PORT!)
   );
 }

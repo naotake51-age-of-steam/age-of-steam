@@ -29,7 +29,7 @@ export function RoomList() {
   return (
     <Grid>
       {sortedRooms.map((room) => (
-        <Grid.Col key={room.id} span={{ base: 6, md: 4, lg: 3, xl: 2 }}>
+        <Grid.Col key={room.id} span={{ base: 6, sm: 4, lg: 3, xl: 2 }}>
           <Room room={room} />
         </Grid.Col>
       ))}
@@ -44,18 +44,21 @@ function Room({ room }: { room: Room }) {
         <Image src={`${room.game.type}.jpg`} h={160} alt="boardgame" />
       </Card.Section>
 
-      <Group justify="space-between" mt="md" mb="xs">
-        <Text fw={500}>{room.name}</Text>
+      <Group justify="space-between" mt="md" mb="xs" wrap="nowrap">
+        <Text flex={1} fw={500} truncate>
+          {room.name}
+        </Text>
         <Badge color={room.users.length ? "pink" : "gray"}>
           {room.users.length}人
         </Badge>
       </Group>
 
-      <Text size="sm" c="dimmed">
+      <Text size="xs" c="dimmed" truncate>
         {room.game.name}
       </Text>
-      <Text size="sm" c="dimmed">
-        {room.users.map((user) => user.name).join(", ")}
+
+      <Text size="xs" c="dimmed" mt="xs" truncate>
+        {room.users.map((user) => user.name).join(", ") || "-"}
       </Text>
 
       <Link href={`/rooms/${room.id}`}>
