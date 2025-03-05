@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@age-of-steam/rust-belt-core": "github:naotake51-age-of-steam/rust-belt-core",
     "@mantine/core": "^7.17.0",
     "@mantine/form": "^7.17.0",
     "@mantine/hooks": "^7.17.0",
