@@ -6,9 +6,12 @@ import { onSnapshot, doc } from "firebase/firestore";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { useEffect, useState, useContext } from "react";
+import { GameDetachButton } from "./GameDetachButton";
+import { GameSelectButton } from "./GameSelectButton";
 import { MemberList } from "./MemberList";
 import MessageForm from "./MessageForm";
 import MessageList from "./MessageList";
+import { BoardGame } from "@/app/components/board-games";
 import { db, realtimeDb } from "@/app/lib/firebase";
 import { AuthContext } from "@/app/providers/AuthProvider";
 import { Room } from "@/app/type";
@@ -61,7 +64,7 @@ export default function RoomPage() {
   return (
     <Group w="100%" h="100%" justify="space-between" p={0}>
       <Box h="100%" flex={1}>
-        Game Board
+        <BoardGame game={room.game} />
       </Box>
       <Divider orientation="vertical" />
       <Stack w="300px" h="100%" p="sm" pl={0}>
@@ -74,8 +77,13 @@ export default function RoomPage() {
         <MessageList roomId={roomId} />
         <MessageForm roomId={roomId} />
         <Divider label="アクション" />
+        {room.game ? (
+          <GameDetachButton roomId={roomId} />
+        ) : (
+          <GameSelectButton roomId={roomId} />
+        )}
         <Link href="/">
-          <Button variant="outline" color="blue" fullWidth mt="md" radius="md">
+          <Button variant="outline" color="blue" fullWidth radius="md">
             退室
           </Button>
         </Link>

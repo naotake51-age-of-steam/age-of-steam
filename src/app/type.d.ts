@@ -1,6 +1,4 @@
-export type GameType =
-  | "age-of-steam/pittsburgh"
-  | "age-of-steam/southern-china";
+export type GameType = "age-of-steam/rust-belt" | "age-of-steam/western-us";
 
 export interface User {
   id: string;
@@ -8,9 +6,8 @@ export interface User {
 }
 
 export interface Game {
-  type: GameType;
   id: string;
-  name: string;
+  type: GameType;
 }
 
 export interface Room {
@@ -18,5 +15,5 @@ export interface Room {
   name: string;
   timestamp: number;
   users: User[];
-  game: Game;
+  game: Game | null;
 }

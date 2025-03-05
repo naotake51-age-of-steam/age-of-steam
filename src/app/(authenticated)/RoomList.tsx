@@ -4,6 +4,7 @@ import { Card, Image, Text, Badge, Button, Group, Grid } from "@mantine/core";
 import { collection, onSnapshot } from "firebase/firestore";
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { getGameConfig } from "../lib/gameConfigs";
 import { db } from "@/app/lib/firebase";
 import type { Room } from "@/app/type";
 
@@ -38,10 +39,16 @@ export function RoomList() {
 }
 
 function Room({ room }: { room: Room }) {
+  const game = room.game ? getGameConfig(room.game.type) : null;
+
   return (
     <Card shadow="sm" padding="lg" radius="md" withBorder>
       <Card.Section>
-        <Image src={`${room.game.type}.jpg`} h={160} alt="boardgame" />
+        <Image
+          src={game ? game.image : "/noimage.jpg"}
+          h={160}
+          alt="boardgame"
+        />
       </Card.Section>
 
       <Group justify="space-between" mt="md" mb="xs" wrap="nowrap">
@@ -54,7 +61,7 @@ function Room({ room }: { room: Room }) {
       </Group>
 
       <Text size="xs" c="dimmed" truncate>
-        {room.game.name}
+        {game ? game.name : "-"}
       </Text>
 
       <Text size="xs" c="dimmed" mt="xs" truncate>
