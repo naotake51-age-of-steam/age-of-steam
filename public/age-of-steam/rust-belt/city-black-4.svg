@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 86.6">
+  <defs>
+    <style>
+      .a {
+        fill: #333;
+      }
+
+      .b {
+        fill: #fbb03b;
+      }
+
+      .c, .e {
+        fill: #f2f2f2;
+      }
+
+      .d {
+        font-size: 10px;
+        fill: #fff;
+        font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N;
+      }
+
+      .e {
+        font-size: 12px;
+        font-family: HiraKakuPro-W6-83pv-RKSJ-H, Hiragino Kaku Gothic Pro;
+      }
+    </style>
+  </defs>
+  <g>
+    <g>
+      <polygon class="a" points="25.14 86.35 0.29 43.3 25.14 0.25 74.86 0.25 99.71 43.3 74.86 86.35 25.14 86.35"/>
+      <path d="M25.29,7.2H74.71L99.42,50,74.71,92.8H25.29L.58,50,25.29,7.2M25,6.7,0,50,25,93.3H75L100,50,75,6.7Z" transform="translate(0 -6.7)"/>
+    </g>
+    <g>
+      <polygon class="b" points="26.79 83.5 3.58 43.3 26.79 3.1 73.21 3.1 96.42 43.3 73.21 83.5 26.79 83.5"/>
+      <path class="c" d="M72.92,10.3,95.85,50,72.92,89.7H27.08L4.15,50,27.08,10.3H72.92m.58-1h-47L3,50,26.5,90.7h47L97,50,73.5,9.3Z" transform="translate(0 -6.7)"/>
+    </g>
+    <circle class="c" cx="50" cy="43.3" r="20"/>
+    <path class="a" d="M37.5,2.3h25a0,0,0,0,1,0,0v8.76a9.24,9.24,0,0,1-9.24,9.24H46.74a9.24,9.24,0,0,1-9.24-9.24V2.3a0,0,0,0,1,0,0Z"/>
+    <path class="a" d="M37.5,73h25a0,0,0,0,1,0,0v8.76A9.24,9.24,0,0,1,53.26,91H46.74a9.24,9.24,0,0,1-9.24-9.24V73A0,0,0,0,1,37.5,73Z" transform="translate(100 157.3) rotate(-180)"/>
+  </g>
+  <g>
+    <text class="d" transform="translate(65.42 23.09) rotate(47.74)">W</text>
+    <text class="d" transform="translate(71.21 29.59) rotate(65.06)">H</text>
+    <text class="d" transform="translate(73.94 35.59) rotate(78.21)">E</text>
+    <text class="d" transform="translate(74.96 40.39) rotate(89.07)">E</text>
+    <text class="d" transform="translate(75.05 45.31) rotate(100.31)">L</text>
+    <text class="d" transform="matrix(-0.32, 0.95, -0.95, -0.32, 74.12, 50.04)">I</text>
+    <text class="d" transform="translate(73.62 52.25) rotate(118.86)">N</text>
+    <text class="d" transform="matrix(-0.69, 0.72, -0.72, -0.69, 70.46, 58.08)">G</text>
+    <text class="d" transform="translate(34.58 63.51) rotate(-132.26)">W</text>
+    <text class="d" transform="translate(28.79 57) rotate(-114.94)">H</text>
+    <text class="d" transform="translate(26.06 51) rotate(-101.79)">E</text>
+    <text class="d" transform="translate(25.04 46.21) rotate(-90.93)">E</text>
+    <text class="d" transform="translate(24.95 41.29) rotate(-79.69)">L</text>
+    <text class="d" transform="matrix(0.32, -0.95, 0.95, 0.32, 25.89, 36.56)">I</text>
+    <text class="d" transform="translate(26.38 34.35) rotate(-61.14)">N</text>
+    <text class="d" transform="matrix(0.69, -0.72, 0.72, 0.69, 29.54, 28.52)">G</text>
+    <text class="e" transform="translate(45.73 79.86)">4</text>
+    <text class="e" transform="translate(54.27 6.74) rotate(180)">4</text>
+  </g>
+</svg>

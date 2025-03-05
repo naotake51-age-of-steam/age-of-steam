@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 86.6">
+  <defs>
+    <style>
+      .a {
+        opacity: 0.2;
+      }
+
+      .b {
+        fill: blue;
+      }
+    </style>
+  </defs>
+  <g class="a">
+    <polygon class="b" points="25 86.6 0 43.3 25 0 75 0 100 43.3 75 86.6 25 86.6"/>
+  </g>
+</svg>

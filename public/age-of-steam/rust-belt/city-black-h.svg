@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 86.6">
+  <g>
+    <g>
+      <polygon points="25.14 86.35 0.29 43.3 25.14 0.25 74.86 0.25 99.71 43.3 74.86 86.35 25.14 86.35" style="fill: #333"/>
+      <path d="M25.29,7.2H74.71L99.42,50,74.71,92.8H25.29L.58,50,25.29,7.2M25,6.7,0,50,25,93.3H75L100,50,75,6.7Z" transform="translate(0 -6.7)"/>
+    </g>
+    <g>
+      <polygon points="26.79 83.5 3.58 43.3 26.79 3.1 73.21 3.1 96.42 43.3 73.21 83.5 26.79 83.5" style="fill: #4d4d4d"/>
+      <path d="M72.92,10.3,95.85,50,72.92,89.7H27.08L4.15,50,27.08,10.3H72.92m.58-1h-47L3,50,26.5,90.7h47L97,50,73.5,9.3Z" transform="translate(0 -6.7)" style="fill: #f2f2f2"/>
+    </g>
+    <circle cx="50" cy="43.3" r="20" style="fill: #f2f2f2"/>
+    <path d="M37.5,2.3h25a0,0,0,0,1,0,0v8.76a9.24,9.24,0,0,1-9.24,9.24H46.74a9.24,9.24,0,0,1-9.24-9.24V2.3a0,0,0,0,1,0,0Z" style="fill: #333"/>
+    <path d="M37.5,73h25a0,0,0,0,1,0,0v8.76A9.24,9.24,0,0,1,53.26,91H46.74a9.24,9.24,0,0,1-9.24-9.24V73A0,0,0,0,1,37.5,73Z" transform="translate(100 157.3) rotate(-180)" style="fill: #333"/>
+  </g>
+  <g>
+    <text transform="translate(67.02 24.64) rotate(50.38)" style="font-size: 10px;fill: #fff;font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N">N</text>
+    <text transform="translate(71.24 29.84) rotate(63.58)" style="font-size: 10px;fill: #fff;font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N">E</text>
+    <text transform="translate(73.68 34.01) rotate(79.06)" style="font-size: 10px;fill: #fff;font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N">W</text>
+    <text transform="translate(75.02 42.7) rotate(91.27)" style="font-size: 10px;fill: #fff;font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N"> </text>
+    <text transform="translate(75.15 44.78) rotate(100.4)" style="font-size: 10px;fill: #fff;font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N">C</text>
+    <text transform="translate(73.96 50.57) rotate(109.8)" style="font-size: 10px;fill: #fff;font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N">I</text>
+    <text transform="matrix(-0.47, 0.88, -0.88, -0.47, 73.29, 52.78)" style="font-size: 10px;fill: #fff;font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N">T</text>
+    <text transform="matrix(-0.64, 0.77, -0.77, -0.64, 71.01, 57.16)" style="font-size: 10px;fill: #fff;font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N">Y</text>
+    <text transform="translate(32.99 61.95) rotate(-129.62)" style="font-size: 10px;fill: #fff;font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N">N</text>
+    <text transform="translate(28.77 56.76) rotate(-116.42)" style="font-size: 10px;fill: #fff;font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N">E</text>
+    <text transform="translate(26.33 52.58) rotate(-100.94)" style="font-size: 10px;fill: #fff;font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N">W</text>
+    <text transform="translate(24.98 43.9) rotate(-88.73)" style="font-size: 10px;fill: #fff;font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N"> </text>
+    <text transform="translate(24.85 41.81) rotate(-79.6)" style="font-size: 10px;fill: #fff;font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N">C</text>
+    <text transform="translate(26.04 36.02) rotate(-70.2)" style="font-size: 10px;fill: #fff;font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N">I</text>
+    <text transform="matrix(0.47, -0.88, 0.88, 0.47, 26.71, 33.81)" style="font-size: 10px;fill: #fff;font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N">T</text>
+    <text transform="matrix(0.64, -0.77, 0.77, 0.64, 28.99, 29.44)" style="font-size: 10px;fill: #fff;font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N">Y</text>
+    <text transform="translate(45.04 79.86)" style="font-size: 12px;fill: #f2f2f2;font-family: HiraKakuPro-W6-83pv-RKSJ-H, Hiragino Kaku Gothic Pro">H</text>
+    <text transform="translate(54.96 6.74) rotate(180)" style="font-size: 12px;fill: #f2f2f2;font-family: HiraKakuPro-W6-83pv-RKSJ-H, Hiragino Kaku Gothic Pro">H</text>
+  </g>
+</svg>

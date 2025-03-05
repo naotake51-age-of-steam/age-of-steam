@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99.71 86.35">
+  <g id="base">
+    <polygon points="24.93 86.35 0 43.17 24.93 0 74.78 0 99.71 43.17 74.78 86.35 24.93 86.35" style="fill: none" />
+  </g>
+  <g id="line-5">
+    <path d="M50.51,30.53a65.63,65.63,0,0,1-33.77-8.85" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 2px" />
+    <path d="M50,46.54a81.56,81.56,0,0,1-41.26-11" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 2px" />
+    <g>
+      <path d="M50,38.54H49" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px" />
+      <path d="M45.26,38.41a73.67,73.67,0,0,1-30-8.42" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px;stroke-dasharray: 1.847504734992981,3.695009469985962" />
+      <path d="M13.61,29.11l-.87-.5" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px" />
+    </g>
+  </g>
+  <g id="line-3">
+    <line x1="57.86" y1="86.17" x2="57.86" y2="43.17" style="fill: none;stroke-miterlimit: 10;stroke-width: 2px" />
+    <line x1="41.86" y1="43.17" x2="41.86" y2="86.17" style="fill: none;stroke-miterlimit: 10;stroke-width: 2px" />
+    <path d="M50,90V50" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px;stroke-dasharray: 2,4" />
+  </g>
+  <g id="line-1">
+    <path d="M83.15,21.46a66.26,66.26,0,0,1-32.64,9.07" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 2px" />
+    <path d="M91.26,35.26A82.48,82.48,0,0,1,50,46.54" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 2px" />
+    <g>
+      <path d="M87.15,28.39l-.87.5" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px" />
+      <path d="M83,30.63A74.35,74.35,0,0,1,52.8,38.47" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px;stroke-dasharray: 1.8501453399658203,3.7002906799316406" />
+      <path d="M51,38.53H50" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px" />
+    </g>
+  </g>
+  <g id="line-0">
+    <line x1="57.86" y1="43.17" x2="57.86" y2="0.17" style="fill: none;stroke-miterlimit: 10;stroke-width: 2px" />
+    <line x1="41.86" y1="0.17" x2="41.86" y2="43.17" style="fill: none;stroke-miterlimit: 10;stroke-width: 2px" />
+    <path d="M50,10V50" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px;stroke-dasharray: 2,4" />
+  </g>
+</svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 86.6">
+  <defs>
+    <style>
+      .a {
+        fill: #f2f2f2;
+      }
+
+      .b {
+        fill: #0071bc;
+      }
+
+      .c {
+        fill: #a67c52;
+      }
+
+      .d {
+        font-size: 10px;
+        fill: #fff;
+        font-family: KozGoPr6N-Regular-83pv-RKSJ-H, Kozuka Gothic Pr6N;
+      }
+
+      .e {
+        font-size: 12px;
+        fill: #754c24;
+        font-family: HiraKakuPro-W6-83pv-RKSJ-H, Hiragino Kaku Gothic Pro;
+      }
+    </style>
+  </defs>
+  <g>
+    <g>
+      <polygon class="a" points="25.14 86.35 0.29 43.3 25.14 0.25 74.86 0.25 99.71 43.3 74.86 86.35 25.14 86.35"/>
+      <path d="M25.29,7.2H74.71L99.42,50,74.71,92.8H25.29L.58,50,25.29,7.2M25,6.7,0,50,25,93.3H75L100,50,75,6.7Z" transform="translate(0 -6.7)"/>
+    </g>
+    <g>
+      <polygon class="b" points="26.79 83.5 3.58 43.3 26.79 3.1 73.21 3.1 96.42 43.3 73.21 83.5 26.79 83.5"/>
+      <path class="c" d="M72.92,10.3,95.85,50,72.92,89.7H27.08L4.15,50,27.08,10.3H72.92m.58-1h-47L3,50,26.5,90.7h47L97,50,73.5,9.3Z" transform="translate(0 -6.7)"/>
+    </g>
+    <circle class="a" cx="50" cy="43.3" r="20"/>
+    <path class="a" d="M37.5,2.3h25a0,0,0,0,1,0,0v8.76a9.24,9.24,0,0,1-9.24,9.24H46.74a9.24,9.24,0,0,1-9.24-9.24V2.3a0,0,0,0,1,0,0Z"/>
+    <path class="a" d="M37.5,73h25a0,0,0,0,1,0,0v8.76A9.24,9.24,0,0,1,53.26,91H46.74a9.24,9.24,0,0,1-9.24-9.24V73A0,0,0,0,1,37.5,73Z" transform="translate(100 157.3) rotate(-180)"/>
+  </g>
+  <g>
+    <text class="d" transform="matrix(0.85, 0.52, -0.52, 0.85, 59.31, 19.68)">M</text>
+    <text class="d" transform="matrix(0.73, 0.69, -0.69, 0.73, 66.25, 24.25)">I</text>
+    <text class="d" transform="translate(68.04 25.63) rotate(53.6)">N</text>
+    <text class="d" transform="translate(72.03 30.94) rotate(68.75)">N</text>
+    <text class="d" transform="translate(74.39 37.16) rotate(81.94)">E</text>
+    <text class="d" transform="translate(75.18 42.01) rotate(94.49)">A</text>
+    <text class="d" transform="matrix(-0.3, 0.95, -0.95, -0.3, 74.7, 48.16)">P</text>
+    <text class="d" transform="translate(73.23 53.26) rotate(121.63)">O</text>
+    <text class="d" transform="translate(69.52 59.13) rotate(134.83)">L</text>
+    <text class="d" transform="translate(66.07 62.5) rotate(142.95)">I</text>
+    <text class="d" transform="translate(64.31 63.97) rotate(151.27)">S</text>
+    <text class="d" transform="matrix(-0.85, -0.52, 0.52, -0.85, 40.69, 66.91)">M</text>
+    <text class="d" transform="matrix(-0.73, -0.69, 0.69, -0.73, 33.76, 62.35)">I</text>
+    <text class="d" transform="translate(31.96 60.97) rotate(-126.4)">N</text>
+    <text class="d" transform="translate(27.97 55.65) rotate(-111.25)">N</text>
+    <text class="d" transform="translate(25.62 49.44) rotate(-98.06)">E</text>
+    <text class="d" transform="translate(24.82 44.59) rotate(-85.51)">A</text>
+    <text class="d" transform="matrix(0.3, -0.95, 0.95, 0.3, 25.31, 38.44)">P</text>
+    <text class="d" transform="translate(26.77 33.34) rotate(-58.37)">O</text>
+    <text class="d" transform="translate(30.49 27.47) rotate(-45.17)">L</text>
+    <text class="d" transform="translate(33.94 24.1) rotate(-37.05)">I</text>
+    <text class="d" transform="translate(35.69 22.63) rotate(-28.73)">S</text>
+    <text class="e" transform="translate(45.73 79.86)">5</text>
+    <text class="e" transform="translate(54.27 6.74) rotate(180)">5</text>
+  </g>
+</svg>

@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 86.6">
+  <defs>
+    <style>
+      .a {
+        fill: #c69c6d;
+      }
+
+      .b {
+        fill: #8c6239;
+      }
+
+      .c {
+        fill: #a67c52;
+      }
+    </style>
+  </defs>
+  <g>
+    <polygon class="a" points="25.07 86.47 0.14 43.3 25.07 0.13 74.93 0.13 99.86 43.3 74.93 86.47 25.07 86.47"/>
+    <path class="b" d="M25.14,7H74.86L99.71,50,74.86,93.05H25.14L.29,50,25.14,7M25,6.7,0,50,25,93.3H75L100,50,75,6.7Z" transform="translate(0 -6.7)"/>
+  </g>
+  <g>
+    <g>
+      <polygon class="c" points="36.53 83.17 42.55 72.74 48.57 83.17 36.53 83.17"/>
+      <path class="b" d="M42.55,79.69l5.8,10.06H36.74l5.81-10.06m0-.5L36.31,90H48.79L42.55,79.19Z" transform="translate(0 -6.7)"/>
+    </g>
+    <g>
+      <polygon class="c" points="44.07 83.17 53.85 66.23 63.63 83.17 44.07 83.17"/>
+      <path class="b" d="M53.85,73.18l9.57,16.57H44.28l9.57-16.57m0-.5L43.85,90h20l-10-17.32Z" transform="translate(0 -6.7)"/>
+    </g>
+  </g>
+</svg>

@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 99.71 86.35">
+  <g id="base">
+    <polygon points="24.93 86.35 0 43.17 24.93 0 74.78 0 99.71 43.17 74.78 86.35 24.93 86.35" style="fill: none" />
+  </g>
+  <g id="line-5">
+    <path d="M8.6,35.6A66.32,66.32,0,0,1,32.78,59.34" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 2px" />
+    <path d="M16.5,21.68a82.31,82.31,0,0,1,30,29.49" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 2px" />
+    <g>
+      <path d="M12.6,28.67l.87.51" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px" />
+      <path d="M17.1,31.45A74.62,74.62,0,0,1,38,52.61" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px;stroke-dasharray: 2.139960765838623,4.279921531677246" />
+      <path d="M39.16,54.42l.52.86" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px" />
+    </g>
+  </g>
+  <g id="line-3">
+    <path d="M32.78,59.34A65.62,65.62,0,0,1,42,93" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 2px" />
+    <path d="M46.54,51.17A81.61,81.61,0,0,1,58,93" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 2px" />
+    <g>
+      <path d="M39.68,55.28c.17.29.34.57.5.86" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px" />
+      <path d="M42,59.44a73.52,73.52,0,0,1,8,30.68" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px;stroke-dasharray: 1.8786828517913818,3.7573657035827637" />
+      <path d="M50,92c0,.33,0,.67,0,1" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px" />
+    </g>
+  </g>
+  <g id="line-1">
+    <g>
+      <path d="M87.32,28.58l-.88.49" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px" />
+      <path d="M82.4,30.79A25.2,25.2,0,0,1,74.68,32a24.85,24.85,0,0,1-9.51-1.88" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px;stroke-dasharray: 2.19950008392334,4.39900016784668" />
+      <path d="M63.17,29.19c-.3-.15-.59-.31-.88-.47" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px" />
+    </g>
+    <path d="M91.32,35.51A32.93,32.93,0,0,1,74.68,40a32.85,32.85,0,0,1-16.39-4.35" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 2px" />
+    <path d="M83.32,21.65A17,17,0,0,1,74.68,24a16.91,16.91,0,0,1-8.39-2.21" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 2px" />
+  </g>
+  <g id="line-0">
+    <g>
+      <path d="M62.29,28.72c-.29-.17-.58-.34-.86-.52" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px" />
+      <path d="M57.91,25.54a25,25,0,0,1-8-15.33" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px;stroke-dasharray: 2.2083327770233154,4.416665554046631" />
+      <path d="M49.7,8c0-.33,0-.67,0-1" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 14px" />
+    </g>
+    <path d="M58.29,35.65A33,33,0,0,1,41.68,7" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 2px" />
+    <path d="M66.29,21.79A17,17,0,0,1,57.68,7" transform="translate(-0.14 -6.83)" style="fill: none;stroke-miterlimit: 10;stroke-width: 2px" />
+  </g>
+</svg>

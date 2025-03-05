@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 86.6">
+  <defs>
+    <style>
+      .a {
+        fill: none;
+      }
+
+      .b {
+        fill: #8c6239;
+      }
+    </style>
+  </defs>
+  <polygon class="a" points="25 86.6 0 43.3 25 0 75 0 100 43.3 75 86.6 25 86.6"/>
+  <g>
+    <polygon points="40.22 83.17 50 66.23 59.78 83.17 40.22 83.17"/>
+    <path class="b" d="M50,73.18l9.57,16.57H40.43L50,73.18m0-.5L40,90H60L50,72.68Z" transform="translate(0 -6.7)"/>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 86.6">
+  <defs>
+    <style>
+      .a {
+        fill: #bcff7e;
+      }
+
+      .a, .b {
+        stroke: #22b573;
+        stroke-miterlimit: 10;
+        stroke-width: 0.25px;
+      }
+
+      .b {
+        fill: #f2f2f2;
+      }
+    </style>
+  </defs>
+  <polygon class="a" points="25.07 86.47 0.14 43.3 25.07 0.13 74.93 0.13 99.86 43.3 74.93 86.47 25.07 86.47"/>
+  <circle class="b" cx="50" cy="43.3" r="17"/>
+</svg>

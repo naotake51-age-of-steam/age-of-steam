@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 86.6">
+  <defs>
+    <style>
+      .a {
+        opacity: 0.2;
+      }
+
+      .b {
+        fill: blue;
+      }
+    </style>
+  </defs>
+  <g class="a">
+    <path class="b" d="M71.54,12.7,93.07,50,71.54,87.3H28.46L6.93,50,28.46,12.7H71.54M75,6.7H25L0,50,25,93.3H75L100,50,75,6.7Z" transform="translate(0 -6.7)"/>
+  </g>
+</svg>
