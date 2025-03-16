@@ -20,7 +20,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { useToggle } from "@mantine/hooks";
 import { notifications } from "@mantine/notifications";
 import { FirebaseError } from "firebase/app";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { zodResolver } from "mantine-form-zod-resolver";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
@@ -32,6 +32,7 @@ import { Term } from "@/app/components/Term";
 import { auth } from "@/app/lib/firebase";
 
 const schema = z.object({
+  name: z.string().min(1).max(16),
   email: z.string().email(),
   password: z.string().min(6).max(255),
 });
@@ -41,6 +42,7 @@ export function RegisterForm(props: PaperProps) {
 
   const form = useForm({
     initialValues: {
+      name: "",
       email: "",
       password: "",
     },
@@ -59,6 +61,10 @@ export function RegisterForm(props: PaperProps) {
       setIsLoading(true);
 
       await createUserWithEmailAndPassword(auth, values.email, values.password);
+
+      await updateProfile(auth.currentUser!, {
+        displayName: values.name,
+      });
 
       notifications.show({
         title: "登録完了",
@@ -97,6 +103,18 @@ export function RegisterForm(props: PaperProps) {
       </Group>
       <form onSubmit={form.onSubmit(handleSubmit)}>
         <Stack>
+          <TextInput
+            name="name"
+            required
+            label="名前"
+            placeholder="蒸太郎"
+            value={form.values.name}
+            onChange={(event) =>
+              form.setFieldValue("name", event.currentTarget.value)
+            }
+            error={form.errors.name}
+            radius="md"
+          />
           <TextInput
             name="email"
             required
