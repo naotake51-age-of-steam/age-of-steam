@@ -38,7 +38,7 @@ export function SelectMoveGoodsDirection() {
                 <image
                   height={height}
                   width={width}
-                  href="/age-of-steam/rust-belt/space-overlay-2.svg"
+                  href="/age-of-steam/rust-belt/line-overlay-2.svg"
                   x={phase.currentMapSpace!.x}
                   y={phase.currentMapSpace!.y}
                 />
@@ -46,7 +46,7 @@ export function SelectMoveGoodsDirection() {
                   className="opacity-0 group-hover:opacity-100"
                   height={height}
                   width={width}
-                  href="/age-of-steam/rust-belt/space-overlay.svg"
+                  href="/age-of-steam/rust-belt/line-overlay.svg"
                   x={phase.currentMapSpace!.x}
                   y={phase.currentMapSpace!.y}
                 />

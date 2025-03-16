@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 86.6">
+  <defs>
+    <style>
+      .a {
+        opacity: 0.2;
+      }
+
+      .b {
+        fill: none;
+        stroke: blue;
+        stroke-width: 6;
+      }
+    </style>
+  </defs>
+  <g class="a">
+    <circle class="b" cx="50" cy="43.3" r="25"/>
+  </g>
+</svg>
