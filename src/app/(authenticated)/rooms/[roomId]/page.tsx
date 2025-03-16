@@ -75,14 +75,7 @@ export default function RoomPage() {
   }
 
   return (
-    <Group
-      className="relative"
-      w="100%"
-      h="100%"
-      justify="space-between"
-      wrap="nowrap"
-      p={0}
-    >
+    <Group w="100%" h="100%" justify="space-between" wrap="nowrap" p={0}>
       <Box h="100%" flex={1}>
         <BoardGame game={room.game} />
       </Box>
@@ -110,7 +103,7 @@ export default function RoomPage() {
       </Stack>
       <UnstyledButton
         className={clsx(
-          "absolute top-4 right-4 transition",
+          "fixed top-[80px] right-4 transition",
           openedMenu || "rotate-180"
         )}
         onClick={toggleMenu}
