@@ -62,7 +62,7 @@ export default function RoomPage() {
   }
 
   return (
-    <Group w="100%" h="100%" justify="space-between" p={0}>
+    <Group w="100%" h="100%" justify="space-between" wrap="nowrap" p={0}>
       <Box h="100%" flex={1}>
         <BoardGame game={room.game} />
       </Box>

@@ -13,23 +13,17 @@ export interface GameConfig {
   image: string;
   description: string;
   numberOfPlayers: string;
-  initialize: () => object;
-  component: React.ReactNode;
+  component: (gameId: string) => React.ReactNode;
 }
 
 export const gameConfigs: GameConfig[] = [
   {
     type: "age-of-steam/rust-belt",
     name: "Rust Belt",
-    image: "/age-of-steam/rust-belt.jpg",
+    image: "/age-of-steam/rust-belt.png",
     description: "基本マップ",
     numberOfPlayers: "3-6人",
-    initialize() {
-      return {
-        type: "age-of-steam/rust-belt",
-      };
-    },
-    component: <RustBelt />,
+    component: (gameId: string) => <RustBelt gameId={gameId} />,
   },
   {
     type: "age-of-steam/western-us",
@@ -37,12 +31,7 @@ export const gameConfigs: GameConfig[] = [
     image: "/age-of-steam/western-us.jpg",
     description: "アメリカ西部マップ",
     numberOfPlayers: "3-6人",
-    initialize() {
-      return {
-        type: "age-of-steam/western-us",
-      };
-    },
-    component: <WesternUs />,
+    component: (gameId: string) => <WesternUs gameId={gameId} />,
   },
 ] as const;
 

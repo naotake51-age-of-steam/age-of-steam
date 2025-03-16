@@ -17,9 +17,9 @@ export default function AuthenticatedLayout({
           <Logo />
           <UserButton />
         </Group>
-        <Divider />
       </header>
-      <main style={{ height: "calc(100vh - 60px)" }}>{children}</main>
+      <Divider />
+      <main className="h-[calc(100vh-60px)]">{children}</main>
     </AuthProvider>
   );
 }

@@ -1,3 +1,3 @@
-export default function WesternUs() {
-  return <div>WesternUs</div>;
+export default function WesternUs({ gameId }: { gameId: string }) {
+  return <div>WesternUs {gameId}</div>;
 }

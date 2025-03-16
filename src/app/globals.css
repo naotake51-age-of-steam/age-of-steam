@@ -22,3 +22,8 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.firebase-emulator-warning {
+  top: 0;
+  height: 30px;
+}

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 86.6">
+  <defs>
+    <style>
+      .a {
+        fill: #bcff7e;
+      }
+      .c {
+        stroke: #29abe2;
+        fill: none;
+        stroke-width: 2;
+        stroke-linecap: round;
+      }
+    </style>
+    <clipPath id="hexClip">
+      <polygon points="25.07 86.47 0.14 43.3 25.07 0.13 74.93 0.13 99.86 43.3 74.93 86.47 25.07 86.47"/>
+    </clipPath>
+  </defs>
+  <g>
+    <polygon class="a" points="25.07 86.47 0.14 43.3 25.07 0.13 74.93 0.13 99.86 43.3 74.93 86.47 25.07 86.47"/>
+    <circle class="c" cx="-25" cy="0" r="75" clip-path="url(#hexClip)"/>
+  </g>
+</svg>

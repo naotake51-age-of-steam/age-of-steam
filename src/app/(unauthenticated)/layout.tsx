@@ -12,9 +12,9 @@ export default function UnauthenticatedLayout({
         <Group h="100%" px="md">
           <Logo />
         </Group>
-        <Divider />
       </header>
-      <main style={{ height: "calc(100vh - 60px)" }}>{children}</main>
+      <Divider />
+      <main className="h-[calc(100vh-60px)]">{children}</main>
     </>
   );
 }

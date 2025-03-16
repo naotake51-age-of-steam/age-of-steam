@@ -60,7 +60,9 @@ function Message({ message }: { message: Message }) {
           {formatTime(message.timestamp)}
         </Text>
       </Group>
-      <Text size="xs">{message.text}</Text>
+      <Text size="xs" style={{ whiteSpace: "pre-wrap" }}>
+        {message.text}
+      </Text>
     </Paper>
   );
 }
