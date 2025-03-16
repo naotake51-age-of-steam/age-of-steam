@@ -1,6 +1,17 @@
 "use client";
 
-import { Box, Group, Stack, Button, Divider, Title } from "@mantine/core";
+import {
+  Box,
+  Group,
+  Stack,
+  Button,
+  Divider,
+  Title,
+  UnstyledButton,
+} from "@mantine/core";
+import { useDisclosure } from "@mantine/hooks";
+import { IconArrowBarRight } from "@tabler/icons-react";
+import clsx from "clsx";
 import { ref, set, onDisconnect, goOnline, goOffline } from "firebase/database";
 import { onSnapshot, doc } from "firebase/firestore";
 import Link from "next/link";
@@ -20,6 +31,8 @@ export default function RoomPage() {
   const params = useParams();
   const [room, setRoom] = useState<Room | null>(null);
   const roomId = params.roomId as string;
+
+  const [openedMenu, { toggle: toggleMenu }] = useDisclosure(true);
 
   const { currentUser } = useContext(AuthContext);
 
@@ -62,12 +75,19 @@ export default function RoomPage() {
   }
 
   return (
-    <Group w="100%" h="100%" justify="space-between" wrap="nowrap" p={0}>
+    <Group
+      className="relative"
+      w="100%"
+      h="100%"
+      justify="space-between"
+      wrap="nowrap"
+      p={0}
+    >
       <Box h="100%" flex={1}>
         <BoardGame game={room.game} />
       </Box>
       <Divider orientation="vertical" />
-      <Stack w="300px" h="100%" p="sm" pl={0}>
+      <Stack w={openedMenu ? "300px" : "0px"} h="100%" p="sm" pl={0}>
         <Title className="truncate" order={3}>
           {room.name}
         </Title>
@@ -88,6 +108,15 @@ export default function RoomPage() {
           </Button>
         </Link>
       </Stack>
+      <UnstyledButton
+        className={clsx(
+          "absolute top-4 right-4 transition",
+          openedMenu || "rotate-180"
+        )}
+        onClick={toggleMenu}
+      >
+        <IconArrowBarRight />
+      </UnstyledButton>
     </Group>
   );
 }
