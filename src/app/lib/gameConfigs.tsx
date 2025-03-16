@@ -3,9 +3,9 @@ import { lazy } from "react";
 const RustBelt = lazy(
   () => import("@/app/components/board-games/age-of-steam/rust-belt")
 );
-const WesternUs = lazy(
-  () => import("@/app/components/board-games/age-of-steam/western-us")
-);
+// const WesternUs = lazy(
+//   () => import("@/app/components/board-games/age-of-steam/western-us")
+// );
 
 export interface GameConfig {
   type: string;
@@ -25,14 +25,14 @@ export const gameConfigs: GameConfig[] = [
     numberOfPlayers: "3-6人",
     component: (gameId: string) => <RustBelt gameId={gameId} />,
   },
-  {
-    type: "age-of-steam/western-us",
-    name: "Western U.S.",
-    image: "/age-of-steam/western-us.jpg",
-    description: "アメリカ西部マップ",
-    numberOfPlayers: "3-6人",
-    component: (gameId: string) => <WesternUs gameId={gameId} />,
-  },
+  // {
+  //   type: "age-of-steam/western-us",
+  //   name: "Western U.S.",
+  //   image: "/age-of-steam/western-us.jpg",
+  //   description: "アメリカ西部マップ",
+  //   numberOfPlayers: "3-6人",
+  //   component: (gameId: string) => <WesternUs gameId={gameId} />,
+  // },
 ] as const;
 
 export const getGameConfig = (type: string) => {
