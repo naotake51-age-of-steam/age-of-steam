@@ -53,7 +53,7 @@ function UserInfo() {
       <Avatar radius="xl" />
       <div style={{ flex: 1 }}>
         <Text size="sm" fw={500}>
-          {currentUser.displayName ?? "名前不明"}
+          {currentUser.displayName ?? "名前なし"}
         </Text>
         <Text c="dimmed" size="xs">
           {currentUser.email}
