@@ -1,5 +1,6 @@
 import { Paper, Text, Avatar, Group, ScrollArea } from "@mantine/core";
 import { collection, onSnapshot } from "firebase/firestore";
+import { Timestamp } from "firebase-admin/firestore";
 import { useState, useEffect } from "react";
 import { db } from "@/app/lib/firebase";
 
@@ -10,7 +11,7 @@ interface Message {
     id: string;
     name: string;
   };
-  timestamp: number;
+  timestamp: Timestamp;
 }
 
 export default function MessageList({ roomId }: { roomId: string }) {
@@ -28,7 +29,7 @@ export default function MessageList({ roomId }: { roomId: string }) {
               ...doc.data(),
             } as Message)
         )
-        .sort((a, b) => b.timestamp - a.timestamp);
+        .sort((a, b) => b.timestamp.seconds - a.timestamp.seconds);
 
       setMessages(messages);
     });
@@ -44,8 +45,9 @@ export default function MessageList({ roomId }: { roomId: string }) {
 }
 
 function Message({ message }: { message: Message }) {
-  const formatTime = (timestamp: number) => {
-    return new Date(timestamp).toLocaleTimeString([], {
+  const formatTime = (timestamp: Timestamp) => {
+    console.log(timestamp);
+    return timestamp.toDate().toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit",
     });
