@@ -101,7 +101,7 @@ export function SignInForm(props: PaperProps) {
   }
 
   return (
-    <Paper radius="md" p="xl" withBorder {...props} miw={400}>
+    <Paper radius="md" p="xl" withBorder {...props} miw={350}>
       <Group justify="center" mb="xl">
         <Title order={2}>ログイン</Title>
       </Group>
@@ -151,7 +151,7 @@ export function SignInForm(props: PaperProps) {
 
       <Divider label="その他" labelPosition="center" my="lg" />
 
-      <Stack>
+      <Stack gap="xs">
         <Link href={`/forget-password`}>
           <Anchor component="button" type="button" c="dimmed" size="xs">
             パスワードをお忘れですか？

@@ -19,7 +19,7 @@ export default function AuthenticatedLayout({
         </Group>
       </header>
       <Divider />
-      <main className="h-[calc(100vh-60px)]">{children}</main>
+      <main className="h-[calc(100vh-60px)] overflow-scroll">{children}</main>
     </AuthProvider>
   );
 }

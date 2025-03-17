@@ -17,7 +17,7 @@ export default function RustBelt({ gameId }: { gameId: string }) {
       userName={currentUser!.displayName ?? "名前なし"}
     >
       <div className="w-full h-[calc(100vh-60px)] flex">
-        <div className="w-[15%] min-w-[170px]">
+        <div className="w-[15%] min-w-[220px]">
           <PlayerList />
         </div>
         <Divider orientation="vertical" />
@@ -30,7 +30,7 @@ export default function RustBelt({ gameId }: { gameId: string }) {
           </div>
         </div>
         <Divider orientation="vertical" />
-        <div className="w-[15%] min-w-[170px]">
+        <div className="w-[15%] min-w-[220px]">
           <ObjectList />
         </div>
       </div>

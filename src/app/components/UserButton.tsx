@@ -50,8 +50,8 @@ function UserInfo() {
 
   return (
     <Group>
-      <Avatar radius="xl" />
-      <div style={{ flex: 1 }}>
+      <Avatar className="hidden! md:block!" radius="xl" />
+      <div className="hidden! md:block!" style={{ flex: 1 }}>
         <Text size="sm" fw={500}>
           {currentUser.displayName ?? "名前なし"}
         </Text>

@@ -30,7 +30,7 @@ export function RoomList() {
   return (
     <Grid>
       {sortedRooms.map((room) => (
-        <Grid.Col key={room.id} span={{ base: 6, sm: 4, lg: 3, xl: 2 }}>
+        <Grid.Col key={room.id} span={{ xs: 6, sm: 4, lg: 3, xl: 2 }}>
           <Room room={room} />
         </Grid.Col>
       ))}

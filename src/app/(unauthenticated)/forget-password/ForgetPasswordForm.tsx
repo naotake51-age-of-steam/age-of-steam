@@ -65,7 +65,7 @@ export function ForgetPasswordForm(props: PaperProps) {
   }
 
   return (
-    <Paper radius="md" p="xl" withBorder {...props} miw={400}>
+    <Paper radius="md" p="xl" withBorder {...props} miw={350}>
       <Group justify="center" mb="xl">
         <Title order={2}>パスワード再設定</Title>
       </Group>
@@ -92,7 +92,7 @@ export function ForgetPasswordForm(props: PaperProps) {
         </Group>
       </form>
       <Divider label="その他" labelPosition="center" my="lg" />
-      <Stack>
+      <Stack gap="xs">
         <Link href={`/sign-in`}>
           <Anchor component="button" type="button" c="dimmed" size="xs">
             ログイン画面へ
