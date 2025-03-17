@@ -66,6 +66,10 @@ export function RegisterForm(props: PaperProps) {
         displayName: values.name,
       });
 
+      // NOTE:: createUserWithEmailAndPasswordで発行されたトークンにはupdateProfileで設定したdisplayNameが含まれていない。
+      //        トークンのdisplayNameを参照するロジックがあるため、トークンを再発行しておく。
+      await auth.currentUser!.getIdToken(true);
+
       notifications.show({
         title: "登録完了",
         message: "ユーザーの登録が完了しました。🎉",
