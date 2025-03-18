@@ -46,7 +46,6 @@ export default function MessageList({ roomId }: { roomId: string }) {
 
 function Message({ message }: { message: Message }) {
   const formatTime = (timestamp: Timestamp) => {
-    console.log(timestamp);
     return timestamp.toDate().toLocaleTimeString([], {
       hour: "2-digit",
       minute: "2-digit",
