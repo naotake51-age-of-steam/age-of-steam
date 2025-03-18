@@ -13,7 +13,7 @@ import {
 import { useDisclosure } from "@mantine/hooks";
 import { IconArrowBarRight } from "@tabler/icons-react";
 import clsx from "clsx";
-import { ref, set, onDisconnect, goOnline, goOffline } from "firebase/database";
+import { ref, set, onDisconnect, remove } from "firebase/database";
 import { onSnapshot, doc } from "firebase/firestore";
 import Link from "next/link";
 import { useParams } from "next/navigation";
@@ -37,14 +37,6 @@ export default function RoomPage() {
   const { currentUser } = useContext(AuthContext);
 
   useEffect(() => {
-    goOnline(realtimeDb);
-
-    return () => {
-      goOffline(realtimeDb);
-    };
-  }, []);
-
-  useEffect(() => {
     const sessionId = crypto.randomUUID();
     const timestamp = new Date().getTime();
 
@@ -56,6 +48,10 @@ export default function RoomPage() {
     set(sessionRef, timestamp);
 
     onDisconnect(sessionRef).remove();
+
+    return () => {
+      remove(sessionRef);
+    };
   }, [roomId, currentUser]);
 
   useEffect(() => {
