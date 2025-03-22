@@ -8,6 +8,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import "@mantine/core/styles.css";
 import "@mantine/notifications/styles.css";
+import { unstable_ViewTransition as ViewTransition } from "react";
 import { theme } from "@/app/theme";
 
 export const metadata: Metadata = {
@@ -26,10 +27,12 @@ export default function RootLayout({
         <ColorSchemeScript />
       </head>
       <body>
-        <MantineProvider theme={theme}>
-          <Notifications autoClose={10 * 1000} />
-          {children}
-        </MantineProvider>
+        <ViewTransition>
+          <MantineProvider theme={theme}>
+            <Notifications autoClose={10 * 1000} />
+            {children}
+          </MantineProvider>
+        </ViewTransition>
       </body>
     </html>
   );
