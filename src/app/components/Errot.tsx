@@ -1,4 +1,5 @@
 import { Button } from "@mantine/core";
+import Link from "next/link";
 
 export function Error({
   status,
@@ -15,7 +16,9 @@ export function Error({
         <h1 className="mb-4 text-6xl font-bold text-gray-800">{status}</h1>
         <h2 className="mb-4 text-3xl font-semibold text-gray-700">{title}</h2>
         <p className="mb-8 text-xl text-gray-600">{description}</p>
-        <Button onClick={() => window.location.reload()}>再読み込み</Button>
+        <Link href="/">
+          <Button variant="outline">ホーム画面へ</Button>
+        </Link>
       </div>
     </div>
   );
