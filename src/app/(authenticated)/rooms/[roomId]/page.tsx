@@ -30,6 +30,7 @@ import { GameSelectButton } from "./GameSelectButton";
 import { MemberList } from "./MemberList";
 import MessageForm from "./MessageForm";
 import MessageList from "./MessageList";
+import { Error } from "@/app/components/Errot";
 import { BoardGame } from "@/app/components/board-games";
 import { db, realtimeDb } from "@/app/lib/firebase";
 import { useIsMobile } from "@/app/lib/use-mobile";
@@ -38,7 +39,7 @@ import { Room } from "@/app/type";
 
 export default function RoomPage() {
   const params = useParams();
-  const [room, setRoom] = useState<Room | null>(null);
+  const [room, setRoom] = useState<Room | null | undefined>();
   const roomId = params.roomId as string;
 
   const { currentUser } = useContext(AuthContext);
@@ -71,15 +72,29 @@ export default function RoomPage() {
 
     return onSnapshot(roomRef, (snapshot) => {
       const room = snapshot.data();
-      setRoom({
-        id: snapshot.id,
-        ...room,
-      } as Room);
+      if (room) {
+        setRoom({
+          id: snapshot.id,
+          ...room,
+        } as Room);
+      } else {
+        setRoom(null);
+      }
     });
   }, [roomId]);
 
-  if (!room) {
+  if (room === undefined) {
     return null;
+  }
+
+  if (room === null) {
+    return (
+      <Error
+        status={404}
+        title="ルームが見つかりません"
+        description="指定されたルームが削除されたか、URLに間違いがあります。"
+      />
+    );
   }
 
   return (
