@@ -6,12 +6,8 @@ import {
 } from "@age-of-steam/rust-belt-core";
 import { Group, Stack, Badge } from "@mantine/core";
 import React from "react";
-import { useContext } from "react";
-import { GameContext } from "../GameProvider";
 
 export function GoodsDisplay() {
-  const {} = useContext(GameContext); // Gameが更新されたら再レンダリングする必要がある。
-
   return (
     <Stack>
       <GoodsDisplayByColor
