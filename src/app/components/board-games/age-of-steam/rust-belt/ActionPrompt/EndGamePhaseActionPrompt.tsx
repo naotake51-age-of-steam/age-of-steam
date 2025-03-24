@@ -31,6 +31,14 @@ export function EndGamePhaseActionPrompt({ phase }: { phase: EndGamePhase }) {
               ))}
             </Table.Tr>
             <Table.Tr>
+              <Table.Th>株式発行数</Table.Th>
+              {phase.playerScores.map((playerScore) => (
+                <Table.Td key={playerScore.player.id}>
+                  <Text className="text-right">{playerScore.issueShares}</Text>
+                </Table.Td>
+              ))}
+            </Table.Tr>
+            <Table.Tr>
               <Table.Th>線路</Table.Th>
               {phase.playerScores.map((playerScore) => (
                 <Table.Td key={playerScore.player.id}>
