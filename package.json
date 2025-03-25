@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@age-of-steam/fresh-fish-core": "github:naotake51-age-of-steam/fresh-fish-core",
     "@age-of-steam/rust-belt-core": "https://github.com/naotake51-age-of-steam/rust-belt-core.git",
     "@mantine/core": "^7.17.0",
     "@mantine/form": "^7.17.0",

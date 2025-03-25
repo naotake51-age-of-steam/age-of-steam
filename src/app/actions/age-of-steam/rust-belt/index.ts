@@ -1,10 +1,10 @@
 "use server";
 
-import { initializeGame } from "@age-of-steam/rust-belt-core";
+import { initializeGame, toPlain } from "@age-of-steam/rust-belt-core";
 import z from "zod";
 
 export const initialize = async () => {
-  return initializeGame();
+  return toPlain(initializeGame());
 };
 
 import { db } from "@/app/lib/firebase-admin";

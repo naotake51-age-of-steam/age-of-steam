@@ -3,9 +3,12 @@ import { lazy } from "react";
 const RustBelt = lazy(
   () => import("@/app/components/board-games/age-of-steam/rust-belt")
 );
+
 // const WesternUs = lazy(
 //   () => import("@/app/components/board-games/age-of-steam/western-us")
 // );
+
+const FreshFish = lazy(() => import("@/app/components/board-games/fresh-fish"));
 
 export interface GameConfig {
   type: string;
@@ -33,6 +36,14 @@ export const gameConfigs: GameConfig[] = [
   //   numberOfPlayers: "3-6人",
   //   component: (gameId: string) => <WesternUs gameId={gameId} />,
   // },
+  {
+    type: "fresh-fish",
+    name: "Fresh Fish",
+    image: "/fresh-fish/fresh-fish.png",
+    description: "フレッシュフィッシュ",
+    numberOfPlayers: "2-5人",
+    component: (gameId: string) => <FreshFish gameId={gameId} />,
+  },
 ] as const;
 
 export const getGameConfig = (type: string) => {

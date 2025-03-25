@@ -1,9 +1,9 @@
 "use server";
 
-import { toPlain } from "@age-of-steam/rust-belt-core";
 import { FieldValue } from "firebase-admin/firestore";
 import z from "zod";
-import { initialize } from "./age-of-steam/rust-belt";
+import { initialize as initializeRustBelt } from "./age-of-steam/rust-belt";
+import { initialize as initializeFreshFish } from "./fresh-fish";
 import { db } from "@/app/lib/firebase-admin";
 import { serverAction } from "@/app/lib/serverAction";
 
@@ -72,7 +72,10 @@ export const sendMessage = serverAction(
 
 async function initializeGame(gameType: string) {
   if (gameType === "age-of-steam/rust-belt") {
-    return await initialize();
+    return await initializeRustBelt();
+  }
+  if (gameType === "fresh-fish") {
+    return await initializeFreshFish();
   }
 
   throw new Error(`Unknown game type: ${gameType}`);
@@ -105,7 +108,7 @@ export const createGame = serverAction(
 
     const gamesRef = db.collection("games");
     const newGame = await initializeGame(input.gameType);
-    const game = await gamesRef.add(toPlain(newGame));
+    const game = await gamesRef.add(newGame);
 
     await roomRef.set({
       ...room,
