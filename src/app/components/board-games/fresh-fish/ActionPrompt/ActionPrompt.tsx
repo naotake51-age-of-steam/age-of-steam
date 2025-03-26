@@ -5,6 +5,7 @@ import {
   PlaceWallTilePhase,
   PrepareSelectActionPhase,
   SelectActionPhase,
+  PlaceWallOrRoadTilePhase,
   WaitingStartPhase,
 } from "@age-of-steam/fresh-fish-core";
 import { Paper, UnstyledButton } from "@mantine/core";
@@ -15,6 +16,7 @@ import { GameContext } from "../GameProvider";
 import { AuctionAndPlaceOutletTilePhaseActionPrompt } from "./AuctionAndPlaceOutletTilePhaseActionPrompt";
 import { EndGamePhaseActionPrompt } from "./EndGamePhaseActionPrompt";
 import { PlaceMarkerPhaseActionPrompt } from "./PlaceMarkerPhaseActionPrompt";
+import { PlaceWallOrRoadTilePhaseActionPrompt } from "./PlaceWallOrRoadTilePhaseActionPrompt";
 import { PlaceWallTilePhaseActionPrompt } from "./PlaceWallTilePhaseActionPrompt";
 import { PrepareSelectActionPhaseActionPrompt } from "./PrepareSelectActionPhaseActionPrompt";
 import { SelectActionPhaseActionPrompt } from "./SelectActionPhaseActionPrompt";
@@ -61,6 +63,14 @@ export function ActionPrompt() {
       (phase) => (
         <AuctionAndPlaceOutletTilePhaseActionPrompt
           phase={phase as AuctionAndPlaceOutletTilePhase}
+        />
+      )
+    )
+    .when(
+      (phase) => phase instanceof PlaceWallOrRoadTilePhase,
+      (phase) => (
+        <PlaceWallOrRoadTilePhaseActionPrompt
+          phase={phase as PlaceWallOrRoadTilePhase}
         />
       )
     )

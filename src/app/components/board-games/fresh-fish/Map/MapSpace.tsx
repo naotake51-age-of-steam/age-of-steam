@@ -7,14 +7,17 @@ import {
   PlaceWallTilePhase,
   AuctionAndPlaceOutletTilePhase,
 } from "@age-of-steam/fresh-fish-core";
+import { PlaceWallOrRoadTilePhase } from "@age-of-steam/fresh-fish-core";
 import React, { useContext } from "react";
 import { GameContext } from "../GameProvider";
 import { placeMapSpace as placeMapSpaceForAuctionAndPlaceOutletTilePhase } from "@/app/actions/fresh-fish/auction-outlet-tile-phase";
 import { placeMapSpace as placeMapSpaceForPlaceMarkerPhase } from "@/app/actions/fresh-fish/place-marker-phase";
+import { placeMapSpace as placeMapSpaceForPlaceWallOrRoadTilePhase } from "@/app/actions/fresh-fish/place-wall-or-road-tile-phase";
 import { placeMapSpace as placeMapSpaceForPlaceWallTilePhase } from "@/app/actions/fresh-fish/place-wall-tile-phase";
 
 export function MapSpace({ mapSpace }: { mapSpace: MapSpaceClass }) {
-  const { game, action } = useContext(GameContext);
+  const { game, action, selectedTileType, setSelectedTypeType } =
+    useContext(GameContext);
 
   const {
     x,
@@ -43,10 +46,16 @@ export function MapSpace({ mapSpace }: { mapSpace: MapSpaceClass }) {
     game?.phase instanceof AuctionAndPlaceOutletTilePhase &&
     game?.phase.canPlaceMapSpace(mapSpace);
 
+  const isSelectableForPlaceWallOrRoadTilePhase =
+    game?.phase instanceof PlaceWallOrRoadTilePhase &&
+    game?.phase.canPlaceMapSpace(mapSpace) &&
+    selectedTileType !== null;
+
   const isSelectable =
     isSelectableForPlaceMarkerPhase ||
     isSelectableForPlaceWallTilePhase ||
-    isSelectableForAuctionAndPlaceOutletTilePhase;
+    isSelectableForAuctionAndPlaceOutletTilePhase ||
+    isSelectableForPlaceWallOrRoadTilePhase;
 
   async function handleSelectMapSpace() {
     if (isSelectableForPlaceMarkerPhase) {
@@ -63,6 +72,14 @@ export function MapSpace({ mapSpace }: { mapSpace: MapSpaceClass }) {
       await action!(placeMapSpaceForAuctionAndPlaceOutletTilePhase, {
         mapSpaceId: mapSpace.id,
       });
+    }
+    if (isSelectableForPlaceWallOrRoadTilePhase) {
+      await action!(placeMapSpaceForPlaceWallOrRoadTilePhase, {
+        mapSpaceId: mapSpace.id,
+        type: selectedTileType!,
+      });
+
+      setSelectedTypeType(null);
     }
   }
 

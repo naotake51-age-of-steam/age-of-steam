@@ -37,13 +37,13 @@ export function SelectActionPhaseActionPrompt({
               onClick={handelSelectPlaceMakerAction}
               disabled={!phase.canSelectPlaceMarkerAction()}
             >
-              マーカーを配置
+              マーカー配置
             </Button>
             <Button
               onClick={handleSelectPlaceTileAction}
               disabled={!phase.canSelectPlaceTileAction()}
             >
-              タイルを引く
+              タイルドロー
             </Button>
             <Button
               onClick={handleSelectPassAction}

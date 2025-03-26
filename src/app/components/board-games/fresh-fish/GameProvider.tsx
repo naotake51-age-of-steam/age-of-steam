@@ -19,12 +19,18 @@ type GameContextProps = {
     input: T
   ) => Promise<R>;
   back?: () => Promise<void>;
+  selectedTileType: "RoadTile" | "WallTile" | null; // PlaceWallOrRoadTilePhase用
+  setSelectedTypeType: React.Dispatch<
+    React.SetStateAction<"RoadTile" | "WallTile" | null>
+  >;
 };
 
 const GameContext = createContext<GameContextProps>({
   game: undefined,
   action: undefined,
   back: undefined,
+  selectedTileType: null,
+  setSelectedTypeType: () => {},
 });
 
 interface GameProviderProps {
@@ -41,6 +47,10 @@ const GameProvider: FC<GameProviderProps> = ({
   children,
 }) => {
   const [game, setGame] = useState<Game | undefined>();
+
+  const [selectedTileType, setSelectedTypeType] = useState<
+    "RoadTile" | "WallTile" | null
+  >(null);
 
   const [isLoading, setIsLoading] = useState(false);
 
@@ -99,7 +109,9 @@ const GameProvider: FC<GameProviderProps> = ({
   }
 
   return (
-    <GameContext.Provider value={{ game, action, back }}>
+    <GameContext.Provider
+      value={{ game, action, back, selectedTileType, setSelectedTypeType }}
+    >
       <div className={clsx("relative", isLoading && "pointer-events-none")}>
         {children}
         {isLoading && <Loader className="absolute top-1 right-1" />}
