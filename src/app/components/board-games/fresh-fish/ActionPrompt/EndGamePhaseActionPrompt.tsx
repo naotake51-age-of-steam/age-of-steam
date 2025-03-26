@@ -18,7 +18,7 @@ export function EndGamePhaseActionPrompt({ phase }: { phase: EndGamePhase }) {
                 <Table.Th>c</Table.Th>
                 <Table.Th>d</Table.Th>
                 <Table.Th>所持金</Table.Th>
-                <Table.Th>合計点</Table.Th>
+                <Table.Th>得点</Table.Th>
               </Table.Tr>
             </Table.Thead>
             <Table.Tbody>
