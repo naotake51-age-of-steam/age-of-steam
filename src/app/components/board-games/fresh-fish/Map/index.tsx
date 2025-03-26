@@ -14,7 +14,6 @@ export function Map() {
   const width = MAP_SPACE_WIDTH * game!.mapSpacesSize;
   const height = MAP_SPACE_HEIGHT * game!.mapSpacesSize;
 
-  console.log(game?.mapSpaces);
   return (
     <>
       <svg
