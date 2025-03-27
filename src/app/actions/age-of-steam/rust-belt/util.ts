@@ -6,7 +6,6 @@ import {
   toPlain,
   User,
   withContext,
-  hasDelayExecute,
 } from "@age-of-steam/rust-belt-core";
 import { FieldValue } from "firebase-admin/firestore";
 import z from "zod";
@@ -53,8 +52,6 @@ function gameAction<Schema extends z.Schema>(
 
         await gameRef.set(toPlain(updatedGame));
 
-        runDelayExecute(input.gameId, updatedGame, user);
-
         return {
           status: "success",
           title: "アクション実行",
@@ -79,20 +76,6 @@ function gameAction<Schema extends z.Schema>(
       }
     }
   );
-}
-
-function runDelayExecute(gameId: string, game: Game, user: User) {
-  const gameRef = db.collection("games").doc(gameId);
-
-  const phase = game.phase;
-  if (hasDelayExecute(phase)) {
-    setTimeout(() => {
-      const updatedGame = withContext(game, user, () => phase.executeDelay());
-      gameRef.set(toPlain(updatedGame));
-
-      runDelayExecute(gameId, updatedGame, user);
-    }, 1000 * 5);
-  }
 }
 
 export function phaseAction<P extends Phase, Schema extends z.Schema>(

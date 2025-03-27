@@ -1,5 +1,8 @@
 import { type GoodsGrowthPhase } from "@age-of-steam/rust-belt-core";
-import { Text, Stack, Group } from "@mantine/core";
+import { Text, Stack, Group, Divider, Button } from "@mantine/core";
+import { useContext } from "react";
+import { GameContext } from "../GameProvider";
+import { confirm } from "@/app/actions/age-of-steam/rust-belt/goods-growth-phase";
 
 export function GoodsGrowthPhaseActionPrompt({
   phase,
@@ -8,6 +11,12 @@ export function GoodsGrowthPhaseActionPrompt({
 }) {
   const width = 40;
   const height = 40;
+
+  const { action } = useContext(GameContext);
+
+  async function handleConfirm() {
+    await action!(confirm, {});
+  }
 
   return (
     <Stack className="h-full" justify="space-around" align="center">
@@ -43,6 +52,12 @@ export function GoodsGrowthPhaseActionPrompt({
             />
           </svg>
         ))}
+        {phase.canConfirm() && (
+          <>
+            <Divider orientation="vertical" />
+            <Button onClick={handleConfirm}>次へ</Button>
+          </>
+        )}
       </Group>
     </Stack>
   );

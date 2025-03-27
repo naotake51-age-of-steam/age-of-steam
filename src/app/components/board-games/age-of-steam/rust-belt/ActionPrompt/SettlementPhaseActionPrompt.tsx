@@ -130,7 +130,7 @@ export function SettlementPhaseActionPrompt({
         {phase.canConfirm() && (
           <>
             <Divider orientation="vertical" />
-            <Button onClick={handleConfirm}>確認</Button>
+            <Button onClick={handleConfirm}>次へ</Button>
           </>
         )}
       </Group>
