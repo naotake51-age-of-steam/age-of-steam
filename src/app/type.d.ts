@@ -12,6 +12,7 @@ export interface Game {
 
 export interface Room {
   id: string;
+  uid: string;
   name: string;
   timestamp: number;
   users: User[];

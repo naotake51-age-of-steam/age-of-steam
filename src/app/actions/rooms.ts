@@ -26,6 +26,7 @@ export const createRoom = serverAction(
     }
 
     const newRoom = {
+      uid: authUser.uid,
       name: input.name,
       users: [],
       game: null,
@@ -37,6 +38,46 @@ export const createRoom = serverAction(
       status: "success",
       title: "ルーム作成",
       message: "ルームを作成しました。",
+    };
+  }
+);
+
+export const deleteRoom = serverAction(
+  z.object({
+    id: z.string(),
+  }),
+  async function (authUser, input) {
+    const roomRef = db.collection("rooms").doc(input.id);
+    const roomSnapshot = await roomRef.get();
+    const room = roomSnapshot.data();
+    if (!room) {
+      return {
+        status: "success",
+        title: "ルーム削除",
+        message: "ルームは既に削除されています。",
+      };
+    }
+
+    const batch = db.batch();
+
+    batch.delete(roomRef);
+
+    if (room.game) {
+      const gameRef = db.collection("games").doc(room.game.id);
+      batch.delete(gameRef);
+
+      const gameHistoriesRef = gameRef.collection("histories");
+      (await gameHistoriesRef.get()).docs.forEach((doc) =>
+        batch.delete(doc.ref)
+      );
+    }
+
+    await batch.commit();
+
+    return {
+      status: "success",
+      title: "ルーム削除",
+      message: "ルームを削除しました。",
     };
   }
 );
@@ -162,7 +203,7 @@ export const deleteGame = serverAction(
     const gameHistoriesRef = gameRef.collection("histories");
     (await gameHistoriesRef.get()).docs.forEach((doc) => batch.delete(doc.ref));
 
-    batch.commit();
+    await batch.commit();
 
     return {
       status: "success",
