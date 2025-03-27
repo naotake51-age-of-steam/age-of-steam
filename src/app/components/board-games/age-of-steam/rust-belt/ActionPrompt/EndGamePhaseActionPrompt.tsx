@@ -1,5 +1,5 @@
 import { type EndGamePhase } from "@age-of-steam/rust-belt-core";
-import { Text, Stack, Group, Table } from "@mantine/core";
+import { Text, Stack, Group, Table, NumberFormatter } from "@mantine/core";
 import { IconTrack } from "@tabler/icons-react";
 import { toPlayerColorCode } from "../util";
 
@@ -31,7 +31,9 @@ export function EndGamePhaseActionPrompt({ phase }: { phase: EndGamePhase }) {
                   <Text className="text-right">{playerScore.player.name}</Text>
                 </Table.Td>
                 <Table.Td>
-                  <Text className="text-right">${playerScore.income}</Text>
+                  <Text className="text-right">
+                    <NumberFormatter prefix="$" value={playerScore.income} />
+                  </Text>
                 </Table.Td>
                 <Table.Td>
                   <Text className="text-right">{playerScore.issueShares}</Text>

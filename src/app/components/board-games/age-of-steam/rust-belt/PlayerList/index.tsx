@@ -7,6 +7,7 @@ import {
   Table,
   Text,
   ScrollArea,
+  NumberFormatter,
 } from "@mantine/core";
 import { IconTrack } from "@tabler/icons-react";
 import { clsx } from "clsx";
@@ -81,7 +82,9 @@ function PlayerListItem({ player }: { player: Player }) {
                 <Text size="xs">所持金</Text>
               </Table.Th>
               <Table.Td>
-                <Text size="xs">${player.money}</Text>
+                <Text size="xs">
+                  <NumberFormatter prefix="$" value={player.money} />
+                </Text>
               </Table.Td>
             </Table.Tr>
             <Table.Tr>
@@ -89,7 +92,9 @@ function PlayerListItem({ player }: { player: Player }) {
                 <Text size="xs">収入</Text>
               </Table.Th>
               <Table.Td>
-                <Text size="xs">${player.income}</Text>
+                <Text size="xs">
+                  <NumberFormatter prefix="$" value={player.income} />
+                </Text>
               </Table.Td>
             </Table.Tr>
             <Table.Tr>

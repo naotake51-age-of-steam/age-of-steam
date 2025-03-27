@@ -1,5 +1,13 @@
 import { type DeterminePlayerOrderPhase } from "@age-of-steam/rust-belt-core";
-import { Text, Stack, Group, Button, Divider, Box } from "@mantine/core";
+import {
+  Text,
+  Stack,
+  Group,
+  Button,
+  Divider,
+  Box,
+  NumberFormatter,
+} from "@mantine/core";
 import { IconTrack } from "@tabler/icons-react";
 import { clsx } from "clsx";
 import { useState, useContext, useEffect } from "react";
@@ -57,7 +65,9 @@ export function DeterminePlayerOrderPhaseActionPrompt({
             <Text>{playerBid.player.name}</Text>
             {playerBid.money !== 0 && (
               <Box className="border rounded px-2">
-                <Text>${playerBid.money}</Text>
+                <Text>
+                  <NumberFormatter prefix="$" value={playerBid.money} />
+                </Text>
               </Box>
             )}
             {playerBid.canSoftPass && (

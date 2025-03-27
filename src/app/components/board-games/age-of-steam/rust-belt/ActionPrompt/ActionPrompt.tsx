@@ -5,14 +5,13 @@ import {
   SelectActionsPhase,
   BuildTrackPhase,
   MoveGoodsPhase,
-  CollectIncomePhase,
-  PayExpensesPhase,
-  IncomeReductionPhase,
+  SettlementPhase,
   ProductionPhase,
   GoodsGrowthPhase,
   AdvanceTurnMarkerPhase,
   EndGamePhase,
 } from "@age-of-steam/rust-belt-core";
+import { UnderpaymentPhase } from "@age-of-steam/rust-belt-core";
 import { Paper, UnstyledButton } from "@mantine/core";
 import { IconArrowBackUp } from "@tabler/icons-react";
 import { useContext } from "react";
@@ -20,16 +19,15 @@ import { match } from "ts-pattern";
 import { GameContext } from "../GameProvider";
 import { AdvanceTurnMarkerPhaseActionPrompt } from "./AdvanceTurnMarkerPhaseActionPrompt";
 import { BuildTrackPhaseActionPrompt } from "./BuildTrackPhaseActionPrompt";
-import { CollectIncomePhaseActionPrompt } from "./CollectIncomePhaseActionPrompt";
 import { DeterminePlayerOrderPhaseActionPrompt } from "./DeterminePlayerOrderPhaseActionPrompt";
 import { EndGamePhaseActionPrompt } from "./EndGamePhaseActionPrompt";
 import { GoodsGrowthPhaseActionPrompt } from "./GoodsGrowthPhaseActionPrompt";
-import { IncomeReductionPhaseActionPrompt } from "./IncomeReductionPhaseActionPrompt";
 import { IssueSharesPhaseActionPrompt } from "./IssueSharesPhaseActionPrompt";
 import { MoveGoodsPhaseActionPrompt } from "./MoveGoodsPhaseActionPrompt";
-import { PayExpensesPhaseActionPrompt } from "./PayExpensesPhaseActionPrompt";
 import { ProductionPhaseActionPrompt } from "./ProductionPhaseActionPrompt";
 import { SelectActionsPhaseActionPrompt } from "./SelectActionsPhaseActionPrompt";
+import { SettlementPhaseActionPrompt } from "./SettlementPhaseActionPrompt";
+import { UnderpaymentPhaseActionPrompt } from "./UnderpaymentPhaseActionPrompt";
 import { WaitingStartPhaseActionPrompt } from "./WaitingStartPhaseActionPrompt";
 
 export function ActionPrompt() {
@@ -73,23 +71,15 @@ export function ActionPrompt() {
       (phase) => <MoveGoodsPhaseActionPrompt phase={phase as MoveGoodsPhase} />
     )
     .when(
-      (phase) => phase instanceof CollectIncomePhase,
+      (phase) => phase instanceof SettlementPhase,
       (phase) => (
-        <CollectIncomePhaseActionPrompt phase={phase as CollectIncomePhase} />
+        <SettlementPhaseActionPrompt phase={phase as SettlementPhase} />
       )
     )
     .when(
-      (phase) => phase instanceof PayExpensesPhase,
+      (phase) => phase instanceof UnderpaymentPhase,
       (phase) => (
-        <PayExpensesPhaseActionPrompt phase={phase as PayExpensesPhase} />
-      )
-    )
-    .when(
-      (phase) => phase instanceof IncomeReductionPhase,
-      (phase) => (
-        <IncomeReductionPhaseActionPrompt
-          phase={phase as IncomeReductionPhase}
-        />
+        <UnderpaymentPhaseActionPrompt phase={phase as UnderpaymentPhase} />
       )
     )
     .when(
@@ -120,11 +110,11 @@ export function ActionPrompt() {
 
   return (
     <Paper className="w-full h-full relative">
-      {game!.currentPlayer?.hasTurn && (
-        <UnstyledButton className="absolute top-2 right-2" onClick={back}>
-          <IconArrowBackUp size={30} />
-        </UnstyledButton>
-      )}
+      {/* {game!.currentPlayer?.hasTurn && ( */}
+      <UnstyledButton className="absolute top-2 right-2" onClick={back}>
+        <IconArrowBackUp size={30} />
+      </UnstyledButton>
+      {/* )} */}
       {phaseActionPrompt}
     </Paper>
   );

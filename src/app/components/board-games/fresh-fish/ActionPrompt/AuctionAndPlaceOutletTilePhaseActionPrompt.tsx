@@ -2,7 +2,16 @@ import {
   AuctionAndPlaceOutletTilePhase,
   AuctionAndPlaceOutletTilePhaseState,
 } from "@age-of-steam/fresh-fish-core";
-import { Text, Stack, Group, Divider, Table, Button, Box } from "@mantine/core";
+import {
+  Text,
+  Stack,
+  Group,
+  Divider,
+  Table,
+  Button,
+  Box,
+  NumberFormatter,
+} from "@mantine/core";
 import { useState, useContext } from "react";
 import { GameContext } from "../GameProvider";
 import { bids as actionBids } from "@/app/actions/fresh-fish/auction-outlet-tile-phase";
@@ -74,7 +83,12 @@ export function AuctionAndPlaceOutletTilePhaseActionPrompt({
                         <Text>{playerBids.player.name}</Text>
                       </Table.Td>
                       <Table.Td>
-                        <Text className="text-right">${playerBids.bids}</Text>
+                        <Text className="text-right">
+                          <NumberFormatter
+                            prefix="$"
+                            value={playerBids.bids!}
+                          />
+                        </Text>
                       </Table.Td>
                     </Table.Tr>
                   ))}
