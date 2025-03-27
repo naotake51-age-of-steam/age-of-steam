@@ -33,11 +33,7 @@ export function MapSpace({ mapSpace }: { mapSpace: MapSpaceClass }) {
     phase.canBuildCityTile(selectedObject.instance.id, mapSpace.id);
 
   const { width, height } = spaceSize;
-  const { x, y } = mapSpace;
-
-  const { trackTile, townMarker } = mapSpace;
-
-  const cityTile = mapSpace.cityTile;
+  const { x, y, trackTile, townMarker, cityTile } = mapSpace;
 
   async function handleOnClick() {
     if (isSelectableByBuildTrack) {
