@@ -126,7 +126,7 @@ export const createGame = serverAction(
   }
 );
 
-export const detachGame = serverAction(
+export const deleteGame = serverAction(
   z.object({
     roomId: z.string(),
   }),
@@ -153,6 +153,16 @@ export const detachGame = serverAction(
       ...room,
       game: null,
     });
+
+    const batch = db.batch();
+
+    const gameRef = db.collection("games").doc(room.game.id);
+    batch.delete(gameRef);
+
+    const gameHistoriesRef = gameRef.collection("histories");
+    (await gameHistoriesRef.get()).docs.forEach((doc) => batch.delete(doc.ref));
+
+    batch.commit();
 
     return {
       status: "success",

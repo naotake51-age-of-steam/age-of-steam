@@ -17,7 +17,7 @@ export const back = serverAction(
     const latestHistoriesRef = db
       .collection("games")
       .doc(input.gameId)
-      .collection("historiees")
+      .collection("histories")
       .orderBy("timestamp", "desc")
       .limit(1);
 

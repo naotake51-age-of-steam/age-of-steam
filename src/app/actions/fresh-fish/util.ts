@@ -28,7 +28,7 @@ function gameAction<Schema extends z.Schema>(
         const historiesRef = db
           .collection("games")
           .doc(input.gameId)
-          .collection("historiees");
+          .collection("histories");
 
         const plain = (await gameRef.get()).data();
         if (!plain) {

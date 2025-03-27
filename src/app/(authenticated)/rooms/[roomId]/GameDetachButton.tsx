@@ -3,12 +3,12 @@
 import { Button } from "@mantine/core";
 import { notifications } from "@mantine/notifications";
 import { useState } from "react";
-import { detachGame } from "@/app/actions/rooms";
+import { deleteGame } from "@/app/actions/rooms";
 
 export function GameDetachButton({ roomId }: { roomId: string }) {
   const [isLoading, setIsLoading] = useState(false);
 
-  async function handleDetachGame() {
+  async function handleDeleteGame() {
     if (!confirm("本当にゲームを終了してよろしいですか？")) {
       return;
     }
@@ -16,7 +16,7 @@ export function GameDetachButton({ roomId }: { roomId: string }) {
     try {
       setIsLoading(true);
 
-      const response = await detachGame({ roomId });
+      const response = await deleteGame({ roomId });
 
       if (response.status === "error") {
         notifications.show({
@@ -31,7 +31,7 @@ export function GameDetachButton({ roomId }: { roomId: string }) {
   }
 
   return (
-    <Button variant="outline" loading={isLoading} onClick={handleDetachGame}>
+    <Button variant="outline" loading={isLoading} onClick={handleDeleteGame}>
       ゲーム終了
     </Button>
   );
